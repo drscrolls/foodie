@@ -56,7 +56,6 @@ const HomeFoodGridList = () => {
 }
 
 const styles = StyleSheet.create({
-    
     textContainer: {
         width: "100%",
         flexDirection: "row"

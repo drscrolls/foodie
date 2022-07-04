@@ -1,8 +1,15 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Dimensions, Image } from 'react-native';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
 import { MaterialIcons } from '@expo/vector-icons';
+
+
+
+const {height, width} = Dimensions.get('window');
+const cardWidth = (45/100)  * width;
+
+
 
 const BigStoreCard = ({navigation, route, store}) => {
     // console.log("store", store);
@@ -44,7 +51,7 @@ const BigStoreCard = ({navigation, route, store}) => {
 const styles = StyleSheet.create({
     container: {
         margin: 5,
-        width: "45vw",
+        width: cardWidth,
     },
     store_card: {
         padding: 0,

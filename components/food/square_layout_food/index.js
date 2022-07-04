@@ -1,7 +1,10 @@
 import React from 'react';
-import { Image } from 'react-native';
+import { Dimensions, Image } from 'react-native';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
+
+const {height, width} = Dimensions.get('window');
+const cardWidth = (45/100)  * width;
 
 const SquareFood = ({food}) => {
     // console.log("food", food);
@@ -28,7 +31,7 @@ const SquareFood = ({food}) => {
 
 const styles = StyleSheet.create({
     container: {
-        width: "45vw",
+        width: cardWidth,
         margin: 5
     },
     food_card: {

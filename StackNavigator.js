@@ -62,7 +62,7 @@ const StackNavigator = () => {
         name="AllStores" 
         component={AllStores}
         options={({ navigation, route }) => ({
-          title: '',
+          // title: '',
           headerTitleAlign: "center",
           headerStyle: {
             backgroundColor: '#fff',
@@ -78,6 +78,7 @@ const StackNavigator = () => {
             <AllStoresSearch
             navigation={navigation} />
           ),
+          
         })}/>
     </Stack.Navigator>
   );

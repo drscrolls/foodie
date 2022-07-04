@@ -20,11 +20,11 @@ const AllStoresFilterButton = ({navigation}) => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: "row",
-        flex: 1,
+        // flexDirection: "row",
+        // flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        marginRight: 15
+        // marginRight: 10
     },
     btn: {
         borderRadius: 10,
