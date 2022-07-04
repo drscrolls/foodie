@@ -24,7 +24,6 @@ export default function App() {
         <StackNavigator />
         <StatusBar style="auto" />
       </NavigationContainer>
-
     </React.StrictMode>
   );
 }

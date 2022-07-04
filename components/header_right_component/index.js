@@ -3,13 +3,14 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import UserAvatar from '../user_avatar';
 import SearchButton from '../buttons/search_button';
 
-const HeaderRightComponent = () => {
+
+const HeaderRightComponent = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View>
                 <SearchButton />
             </View>
-            <TouchableOpacity style={styles.avatarContainer}>
+            <TouchableOpacity onPress={()=> navigation.push("Profile")} style={styles.avatarContainer}>
                 <UserAvatar />
             </TouchableOpacity>
         </View>

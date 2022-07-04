@@ -5,6 +5,7 @@ import Home from './screens/home';
 import GreetingComponent from './components/greeting_component';
 import SearchButton from './components/buttons/search_button';
 import HeaderRightComponent from './components/header_right_component';
+import Profile from './screens/profile';
 
 
 const Stack = createNativeStackNavigator();
@@ -33,12 +34,29 @@ const StackNavigator = () => {
             />
           ),
           headerRight: () => (
-            <HeaderRightComponent />
+            <HeaderRightComponent
+            navigation={navigation} />
           )
         })}
       />
      
-      {/* <Stack.Screen name="Profile" component={ProfileScreen} /> */}
+      <Stack.Screen 
+        name="Profile" 
+        component={Profile}
+        options={{
+          title: 'Profile',
+          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          cardStyle: {
+            backgroundColor: '#fff',
+          },
+          // headerTintColor: '#fff',
+          // headerTitleStyle: {
+          //   fontWeight: '700',
+          // },
+        }} />
     </Stack.Navigator>
   );
 }
