@@ -21,7 +21,7 @@ const categories = [
     }
 ];
 
-const HomeCategoryList = () => {
+const StoreList = () => {
     return (
         <View>
             <Text style={styles.cat_title}>Popular Categories</Text>
@@ -49,4 +49,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HomeCategoryList;
+export default StoreList;
