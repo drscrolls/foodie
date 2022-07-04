@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
         paddingRight: 10
     },
     input: {
-        outline: "none",
         borderWidth: 0,
         outlineStyle: 'none',
         padding: 0,

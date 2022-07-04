@@ -10,7 +10,7 @@ const HeaderRightComponent = ({navigation}) => {
             <View>
                 <SearchButton />
             </View>
-            <TouchableOpacity onPress={()=> navigation.push("Profile")} style={styles.avatarContainer}>
+            <TouchableOpacity onPress={()=> navigation.navigate("Profile")} style={styles.avatarContainer}>
                 <UserAvatar />
             </TouchableOpacity>
         </View>
