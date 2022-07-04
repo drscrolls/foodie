@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, Text, ScrollView} from 'react-native';
 import Category from '../../components/category';
 import SquareFood from '../../components/food/square_layout_food';
 import HomeCategoryList from '../../components/lists/home_category_list';
@@ -10,12 +10,12 @@ import StoreCard from '../../components/store_card';
 
 const Home = () => {
     return (
-        <View>
+        <ScrollView>
             <LocationPicker />
             <HomeCategoryList />
             <StoreList />
             <HomeFoodGridList />
-        </View>
+        </ScrollView>
     );
 }
 

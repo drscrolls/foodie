@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     container: {
         marginLeft: 15,
         width: 160,
+        marginBottom: 15
     },
     food_card: {
         padding: 5,
