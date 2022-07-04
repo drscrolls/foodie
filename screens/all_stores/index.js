@@ -23,6 +23,7 @@ const AllStores = () => {
     return (
         <ScrollView 
         style={styles.container}
+        bounces={true}
         refreshControl={
           <RefreshControl
             refreshing={refreshing}
