@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 15,
         marginHorizontal: 15,
-        fontWeight: 600,
+        fontWeight: "700",
         flex: 1
     },
     link : {
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         textAlign: "right",
         fontSize: 12,
         marginHorizontal: 20,
-        fontWeight: 400,
+        fontWeight: "400",
         justifyContent: "center",
     }
 })

@@ -1,9 +1,8 @@
 import React from 'react';
-import {View, StyleSheet, Pressable} from 'react-native';
+import {View, StyleSheet, Pressable, TouchableOpacity} from 'react-native';
 import { BottomSheet, Card, Text } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-web';
 
 const LocationPicker = () => {
     return (
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     iconBg: {
         height: 40,
         width: 40,
-        borderRadius: "50%",
+        borderRadius: 50,
         backgroundColor: '#eceff6',
         justifyContent: "center",
         alignContent: "center",
@@ -45,7 +44,7 @@ const styles = StyleSheet.create({
     },
     locationTxt: {
         fontSize: 14,
-        fontWeight: 500
+        fontWeight: "700"
     },
     locationTitle: {
         fontSize: 12,

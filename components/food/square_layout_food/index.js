@@ -11,7 +11,7 @@ const SquareFood = ({food}) => {
 
             <View style={styles.food_card}>
                 <View>
-                    <Card.Image style={styles.img} source={image} />
+                    <Card.Image style={styles.img} source={{uri: image }} />
                 </View>
 
                 <View style={styles.textContainer}>
@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     logo: {
         borderWidth: 3,
         borderColor: "white",
-        borderRadius: "50%"
+        borderRadius: 50
     },
     img: {
         borderRadius: 15,
@@ -55,13 +55,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
-        bottom: "-25px"
+        bottom: -25
     },
     store_name: {
         justifyContent: "center",
         alignSelf: "center",
         fontSize: 14,
-        fontWeight: 600
+        fontWeight: "700"
     },
     textContainer: {
         width: "100%",
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 12,
-        fontWeight: 600,
+        fontWeight: "700",
         textAlign: "left",
         marginLeft: 5,
         width: "65%",
@@ -78,8 +78,9 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 12,
-        fontWeight: 600,
+        fontWeight: "700",
         textAlign: "right",
+        marginRight: 10
     },
     priceContainer: {
         alignSelf: "center",

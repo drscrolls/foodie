@@ -31,7 +31,7 @@ const storesList = [
 ];
 
 const StoreList = () => {
-    console.log("store", storesList);
+    // console.log("store", storesList);
 
     return (
         <View>
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 25,
         marginHorizontal: 15,
-        fontWeight: 600,
+        fontWeight: "700",
         flex: 1
     },
     link: {
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
         textAlign: "right",
         fontSize: 12,
         marginHorizontal: 20,
-        fontWeight: 400,
+        fontWeight: "400",
         justifyContent: "center",
     }
 })

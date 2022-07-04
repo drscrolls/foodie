@@ -14,12 +14,14 @@ const SearchButton = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 15
+        marginHorizontal: 15,
+        margin: 8
     },
     search_btn: {
-        borderRadius: "50%",
-        width: 20,
-        height: 20,
+        borderRadius: 50,
+
+        width: 24,
+        height: 24,
     },
 
 })

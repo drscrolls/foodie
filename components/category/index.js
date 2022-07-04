@@ -3,11 +3,11 @@ import {View, StyleSheet, TouchableOpacity} from 'react-native';
 import { Card, Text } from 'react-native-elements'
 
 const Category = ({navigation, route, category}) => {
-    console.log("category", category);
+    // console.log("category", category);
     const cat = category.item;
     return (
         <TouchableOpacity style={styles.container}>
-            <Card.Image style={styles.img} source={ cat.image} />
+            <Card.Image style={styles.img} source={{ uri: cat.image }} />
         </TouchableOpacity>
     );
 }

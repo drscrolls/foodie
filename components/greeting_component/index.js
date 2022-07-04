@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     },
     greetingTitle: {
         fontFamily: "Arial",
-        fontWeight: 400,
+        fontWeight: "400",
         fontSize: 18
     },
     greetingSubtitle: {

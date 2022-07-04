@@ -4,7 +4,7 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
 
 const StoreCard = ({navigation, route, store}) => {
-    console.log("store", store);
+    // console.log("store", store);
 
     const {backdrop, logo, name} = store.item;
     return (
@@ -12,7 +12,7 @@ const StoreCard = ({navigation, route, store}) => {
 
             <View style={styles.store_card}>
                 <View>
-                    <Card.Image style={styles.img} source={backdrop} />
+                    <Card.Image style={styles.img} source={{uri: backdrop}} />
                     <View style={styles.logoContainer}>
                         <Avatar avatarStyle={styles.logo} source={{ uri: logo }} title="" size="medium" rounded={true} />
                     </View>
@@ -24,10 +24,6 @@ const StoreCard = ({navigation, route, store}) => {
                     </Card.Title>
                 </View>
             </View>
-
-
-
-
 
         </TouchableOpacity>
     );
@@ -48,7 +44,7 @@ const styles = StyleSheet.create({
     logo: {
         borderWidth: 3,
         borderColor: "white",
-        borderRadius: "50%"
+        borderRadius: 50
     },
     img: {
         height:80,
@@ -63,13 +59,13 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
-        bottom: "-25px"
+        bottom: -25
     },
     store_name: {
         justifyContent: "center",
         alignSelf: "center",
         fontSize: 14,
-        fontWeight: 600
+        fontWeight: "700"
     },
     storenameContainer: {
         width: "100%",

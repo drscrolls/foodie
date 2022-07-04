@@ -22,12 +22,13 @@ const styles = StyleSheet.create({
         marginLeft: 10,
     },
     container: {
-        flex: 1,
+        // flex: 1,
         flexDirection: "row",
         justifyContent: "center",
-        alignContent: "center",
-        alignSelf: "center",
+        // alignContent: "flex-end",
+        // alignSelf: "center",
         alignItems: "center",
+        marginRight: 15
     }
 })
 
