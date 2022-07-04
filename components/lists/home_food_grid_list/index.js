@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     cat_title: {
         fontSize: 14,
         marginBottom: 10,
-        marginTop: 15,
+        marginTop: 25,
         marginHorizontal: 15,
         fontWeight: "700",
         flex: 1
