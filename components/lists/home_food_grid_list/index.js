@@ -40,15 +40,17 @@ const HomeFoodGridList = () => {
                     <Text style={styles.link}>See More</Text>
                 </TouchableOpacity>
             </View>
-
-            <FlatList
-                data={foods}
-                renderItem={(item) => <SquareFood food={item} />}
-                keyExtractor={(item) => item.id}
-                numColumns={2}                
-                showsHorizontalScrollIndicator={false}
-            />
+            <View style={styles.listContainer}>
+                <FlatList
+                    data={foods}
+                    renderItem={(item) => <SquareFood food={item} />}
+                    keyExtractor={(item) => item.id}
+                    numColumns={2}                
+                    showsHorizontalScrollIndicator={false}
+                />
                 
+            </View>
+            
         </View>
     );
 }
@@ -61,6 +63,11 @@ const styles = StyleSheet.create({
     },
     linkContainer: {
         justifyContent: "center",
+    },
+    listContainer: {
+        justifyContent: "center",
+        alignItems: "center",
+        alignSelf: "center"
     },
     cat_title: {
         fontSize: 14,

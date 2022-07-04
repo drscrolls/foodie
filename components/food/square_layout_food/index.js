@@ -28,9 +28,8 @@ const SquareFood = ({food}) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginLeft: 15,
-        width: 160,
-        marginBottom: 15
+        width: "45vw",
+        margin: 5
     },
     food_card: {
         padding: 5,
