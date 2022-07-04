@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center",
         marginRight: 15,
-        width: "80vw",
+        // width: "80vw",
     },
     btn: {
         borderRadius: 10,
@@ -34,7 +34,6 @@ const styles = StyleSheet.create({
         justifyContent: "flex-start",
         alignItems: "center",
         width: "100%",
-        marginLeft: 15,
         height: 50
     },
     icon: {

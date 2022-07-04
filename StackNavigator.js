@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='AllStores'
+    <Stack.Navigator initialRouteName='Home'
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
@@ -74,7 +74,7 @@ const StackNavigator = () => {
             <AllStoresFilterButton
             navigation={navigation} />
           ),
-          headerLeft: () => (
+          headerTitle: () => (
             <AllStoresSearch
             navigation={navigation} />
           ),

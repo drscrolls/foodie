@@ -5,12 +5,12 @@ import HomeFoodGridList from '../../components/lists/home_food_grid_list';
 import StoreList from '../../components/lists/store_list';
 import LocationPicker from '../../components/location_picker';
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <ScrollView >
             <LocationPicker />
             <HomeCategoryList />
-            <StoreList />
+            <StoreList navigation={navigation} />
             <HomeFoodGridList />
         </ScrollView>
     );

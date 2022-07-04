@@ -30,14 +30,14 @@ const storesList = [
     },
 ];
 
-const StoreList = () => {
+const StoreList = ({navigation}) => {
     // console.log("store", storesList);
 
     return (
         <View>
             <View style={styles.textContainer}>
                 <Text style={styles.cat_title}>Popular Restaurants</Text>
-                <TouchableOpacity style={styles.linkContainer}>
+                <TouchableOpacity onPress={() => navigation.push("AllStores")} style={styles.linkContainer}>
                     <Text style={styles.link}>See More</Text>
                 </TouchableOpacity>
             </View>
