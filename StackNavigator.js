@@ -6,13 +6,16 @@ import GreetingComponent from './components/greeting_component';
 import SearchButton from './components/buttons/search_button';
 import HeaderRightComponent from './components/header_right_component';
 import Profile from './screens/profile';
+import AllStores from './screens/all_stores';
+import AllStoresFilterButton from './components/filters/all_stores_filter_button';
+import AllStoresSearch from './components/filters/all_stores_search';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Home'
+    <Stack.Navigator initialRouteName='AllStores'
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
@@ -51,12 +54,31 @@ const StackNavigator = () => {
           },
           cardStyle: {
             backgroundColor: '#fff',
-          },
-          // headerTintColor: '#fff',
-          // headerTitleStyle: {
-          //   fontWeight: '700',
-          // },
+          }
         }} />
+
+
+      <Stack.Screen 
+        name="AllStores" 
+        component={AllStores}
+        options={({ navigation, route }) => ({
+          title: '',
+          headerTitleAlign: "center",
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          cardStyle: {
+            backgroundColor: '#f7f7f7',
+          },
+          headerRight: () => (
+            <AllStoresFilterButton
+            navigation={navigation} />
+          ),
+          headerLeft: () => (
+            <AllStoresSearch
+            navigation={navigation} />
+          ),
+        })}/>
     </Stack.Navigator>
   );
 }
