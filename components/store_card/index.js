@@ -19,8 +19,8 @@ const StoreCard = ({navigation, route, store}) => {
                 </View>
 
                 <View style={styles.storenameContainer}>
-                    <Card.Title style={styles.store_name}>
-                        {name}
+                    <Card.Title>
+                        <Text style={styles.store_name}>{name}</Text>
                     </Card.Title>
                 </View>
             </View>

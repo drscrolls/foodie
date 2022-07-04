@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         // alignContent: "flex-end",
         // alignSelf: "center",
         alignItems: "center",
-        marginRight: 15
+        // marginRight: 15
     }
 })
 

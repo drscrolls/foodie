@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignSelf: "center",
         fontSize: 14,
-        fontWeight: "700"
+        fontWeight: "600"
     },
     textContainer: {
         width: "100%",

@@ -19,13 +19,13 @@ const navTheme = {
 export default function App() {
   return (
 
-    // <React.StrictMode>
+    <React.StrictMode>
       <NavigationContainer theme={navTheme}>
         <StackNavigator />
         <StatusBar style="auto" />
       </NavigationContainer>
 
-    // </React.StrictMode>
+    </React.StrictMode>
   );
 }
 

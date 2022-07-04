@@ -19,12 +19,12 @@ const styles = StyleSheet.create({
         marginHorizontal: 10
     },
     greetingTitle: {
-        fontFamily: "Arial",
-        fontWeight: "400",
+        // fontFamily: "Arial",
+        fontWeight: "600",
         fontSize: 18
     },
     greetingSubtitle: {
-        fontFamily: "Arial",
+        // fontFamily: "Arial",
         fontSize: 14
     }  
 
