@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './screens/home';
 import GreetingComponent from './components/greeting_component';
 import SearchButton from './components/buttons/search_button';
+import HeaderRightComponent from './components/header_right_component';
 
 
 const Stack = createNativeStackNavigator();
@@ -15,7 +16,9 @@ const StackNavigator = () => {
         headerShadowVisible: false,
         headerStyle: {
           backgroundColor: '#f2f2f2',
-          
+        },
+        cardStyle: {
+            backgroundColor: '#f2f2f2'
         }
       }}>
       <Stack.Screen
@@ -30,7 +33,7 @@ const StackNavigator = () => {
             />
           ),
           headerRight: () => (
-            <SearchButton />
+            <HeaderRightComponent />
           )
         })}
       />

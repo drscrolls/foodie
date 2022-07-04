@@ -1,4 +1,5 @@
 import React from 'react';
+import { TouchableOpacity } from 'react-native';
 import { View, StyleSheet, Text, FlatList } from 'react-native';
 import StoreCard from '../../store_card';
 
@@ -36,9 +37,9 @@ const StoreList = () => {
         <View>
             <View style={styles.textContainer}>
                 <Text style={styles.cat_title}>Popular Restaurants</Text>
-                <View style={styles.linkContainer}>
+                <TouchableOpacity style={styles.linkContainer}>
                     <Text style={styles.link}>See More</Text>
-                </View>
+                </TouchableOpacity>
             </View>
 
             <FlatList
@@ -67,7 +68,7 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         marginTop: 25,
         marginHorizontal: 15,
-        fontWeight: "600",
+        fontWeight: 600,
         flex: 1
     },
     link: {

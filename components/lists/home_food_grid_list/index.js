@@ -1,41 +1,51 @@
 import React from 'react';
 import {View, StyleSheet, Text, FlatList, TouchableOpacity} from 'react-native';
 import Category from '../../category';
+import SquareFood from '../../food/square_layout_food';
 
-const categories = [
+const foods = [
     {
         id: 1,
-        image: "https://media.istockphoto.com/photos/background-healthy-food-fresh-fruits-vegetables-fish-berries-and-picture-id1089759056?b=1&k=20&m=1089759056&s=170667a&w=0&h=qh3iggw2fOArFYqTZaCJeT3JgMMRhMTtsFdWltUWExU="
+        name: "Waakye, Fish, Egg, Sausage and Beef",
+        price: 20,
+        image: "https://gingerandseasalt.com/wp-content/uploads/2021/08/complete-waakye-dish.jpg"
     },
     {
         id: 2,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLFB-e2exHRKjzCVVDBGrdr7_emsimKqYFw&usqp=CAU"
+        name: "Banku and Okro, Salmon, Crab",
+        price: 15,
+        image: "https://myrecipejoint.com/wp-content/uploads/2020/12/126054251_364930781267593_715183987144198136_n.jpg"
     },
     {
         id: 3,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Y5fME0EUu4tB661_BEf5G0KSU8bIxweJGw&usqp=CAU"
+        name: "Fufu, Light Soup and Goat Meat",
+        price: 25,
+        image: "https://cdn.modernghana.com/images/content/923201784830_fufu1.jpg"
     },
     {
         id: 4,
-        image: "https://media.istockphoto.com/photos/pasta-salad-bowl-with-broccoli-tomato-onion-olives-corn-salad-and-picture-id1352898440?b=1&k=20&m=1352898440&s=170667a&w=0&h=8phYjp9eG8crpa3x_wYZATJjadVmvfcS2dEVMLCvXQs="
-    }
+        name: "Fried yam and Grilled Chicken",
+        price: 20,
+        image: "https://i0.wp.com/u4chop.com/wp-content/uploads/2021/12/oven-baked-barbecued-chicken-7.jpg?fit=885%2C1049&ssl=1"
+    },
+    
 ];
 
-const HomeCategoryList = () => {
+const HomeFoodGridList = () => {
     return (
         <View>
             <View style={styles.textContainer}>
-                <Text style={styles.cat_title}>Popular Categories</Text>
+                <Text style={styles.cat_title}>Recommended for you</Text>
                 <TouchableOpacity style={styles.linkContainer}>
                     <Text style={styles.link}>See More</Text>
                 </TouchableOpacity>
             </View>
 
             <FlatList
-                data={categories}
-                renderItem={(item) => <Category category={item} />}
+                data={foods}
+                renderItem={(item) => <SquareFood food={item} />}
                 keyExtractor={(item) => item.id}
-                horizontal={true}
+                numColumns={2}                
                 showsHorizontalScrollIndicator={false}
             />
                 
@@ -71,4 +81,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default HomeCategoryList;
+export default HomeFoodGridList;
