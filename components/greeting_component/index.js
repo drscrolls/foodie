@@ -16,7 +16,7 @@ const GreetingComponent = ({navigation, name}) => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 10
+        marginHorizontal: 15
     },
     greetingTitle: {
         fontFamily: "Arial",

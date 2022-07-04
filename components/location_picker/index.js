@@ -14,10 +14,10 @@ const LocationPicker = () => {
                         <Ionicons name="ios-location-sharp" size={24} color="#5a61cb" />
                     </View>
 
-                    <View style={styles.locationContainer}>
+                    <TouchableOpacity style={styles.locationContainer}>
                         <Text style={styles.locationTitle}>My location</Text>
                         <Text style={styles.locationTxt}>243 Pond Rd, Shaboro North</Text>
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={styles.chevronContainer}>
                         <Feather name="chevron-right" size={20} color="black" />
@@ -58,7 +58,8 @@ const styles = StyleSheet.create({
     },
     locationCardContainer: {
         borderColor: "white",
-        margin: 20,
+        marginHorizontal: 15,
+        marginVertical: 10,
         backgroundColor: '#fff',
         paddingHorizontal: 15,
         paddingVertical: 10,

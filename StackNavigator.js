@@ -14,7 +14,8 @@ const StackNavigator = () => {
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
-          backgroundColor: '#f7f7f7',
+          backgroundColor: '#f2f2f2',
+          
         }
       }}>
       <Stack.Screen
@@ -28,15 +29,9 @@ const StackNavigator = () => {
               name="Andrew"
             />
           ),
-          headerLeftContainerStyle: {
-            marginStart: 10
-          },
           headerRight: () => (
             <SearchButton />
-          ),
-          headerRightContainerStyle: {
-            margin: 10
-          },
+          )
         })}
       />
      

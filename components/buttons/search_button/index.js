@@ -14,7 +14,7 @@ const SearchButton = () => {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 10
+        marginHorizontal: 15
     },
     search_btn: {
         borderRadius: "50%",
