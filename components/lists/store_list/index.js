@@ -1,51 +1,83 @@
 import React from 'react';
-import {View, StyleSheet, Text, FlatList} from 'react-native';
-import Category from '../../category';
+import { View, StyleSheet, Text, FlatList } from 'react-native';
+import StoreCard from '../../store_card';
 
-const categories = [
+const storesList = [
     {
         id: 1,
-        image: "https://media.istockphoto.com/photos/background-healthy-food-fresh-fruits-vegetables-fish-berries-and-picture-id1089759056?b=1&k=20&m=1089759056&s=170667a&w=0&h=qh3iggw2fOArFYqTZaCJeT3JgMMRhMTtsFdWltUWExU="
+        name: "Macdonalds",
+        backdrop: "https://i.insider.com/62212e77d72a250019740059?width=500",
+        logo: "https://cdn.cafeata.com/photos/photo_0x6b909e04178484eb_0xefb3b8da0b6d2d7e_16252820050390627.jpg"
     },
     {
         id: 2,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTLFB-e2exHRKjzCVVDBGrdr7_emsimKqYFw&usqp=CAU"
+        name: "Subway",
+        backdrop: "https://www.eatthis.com/wp-content/uploads/sites/4/2021/07/subway-sandwiches-1.jpg?quality=52&strip=1",
+        logo: "https://pbs.twimg.com/profile_images/1467714271307915274/-d6qLpOP_400x400.jpg"
     },
     {
         id: 3,
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0Y5fME0EUu4tB661_BEf5G0KSU8bIxweJGw&usqp=CAU"
+        name: "KFC",
+        backdrop: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_XljCFoDrqypq0yaG93LKoMyC6NEWKqLGXA&usqp=CAU",
+        logo: "https://seeklogo.com/images/K/kfc-new-logo-72E6348046-seeklogo.com.png"
     },
     {
         id: 4,
-        image: "https://media.istockphoto.com/photos/pasta-salad-bowl-with-broccoli-tomato-onion-olives-corn-salad-and-picture-id1352898440?b=1&k=20&m=1352898440&s=170667a&w=0&h=8phYjp9eG8crpa3x_wYZATJjadVmvfcS2dEVMLCvXQs="
-    }
+        name: "Burger King",
+        backdrop: "https://i.insider.com/5c0990b1d5000c07f77ba114?width=560&format=jpeg",
+        logo: "https://payalebarsquare.sg/wp-content/uploads/2019/05/BK-LOGO-01.png"
+    },
 ];
 
 const StoreList = () => {
+    console.log("store", storesList);
+
     return (
         <View>
-            <Text style={styles.cat_title}>Popular Categories</Text>
+            <View style={styles.textContainer}>
+                <Text style={styles.cat_title}>Popular Restaurants</Text>
+                <View style={styles.linkContainer}>
+                    <Text style={styles.link}>See More</Text>
+                </View>
+            </View>
 
             <FlatList
-                data={categories}
-                renderItem={(index, item) => <Category cat={item} />}
-                keyExtractor={(item) => item.id}
+                data={storesList}
+                renderItem={(item) => <StoreCard store={item} />}
+                keyExtractor={(item, index) => index}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
             />
-                
+
         </View>
     );
 }
 
 const styles = StyleSheet.create({
-    
+
+    textContainer: {
+        width: "100%",
+        flexDirection: "row"
+    },
+    linkContainer: {
+        justifyContent: "center",
+    },
     cat_title: {
         fontSize: 14,
-        marginBottom: 5,
-        marginTop: 15,
+        marginBottom: 10,
+        marginTop: 25,
         marginHorizontal: 15,
-        fontWeight: "600"
+        fontWeight: "600",
+        flex: 1
+    },
+    link: {
+        color: "#f27e4f",
+        alignSelf: "flex-end",
+        textAlign: "right",
+        fontSize: 12,
+        marginHorizontal: 20,
+        fontWeight: 400,
+        justifyContent: "center",
     }
 })
 

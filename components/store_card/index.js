@@ -3,30 +3,31 @@ import { Image } from 'react-native';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
 
-const StoreCard = () => {
+const StoreCard = ({navigation, route, store}) => {
+    console.log("store", store);
+
+    const {backdrop, logo, name} = store.item;
     return (
         <TouchableOpacity style={styles.container}>
 
-
-            <Card>
+            <View style={styles.store_card}>
                 <View>
-                    <Card.Image source={"https://i.insider.com/62212e77d72a250019740059?width=700"} />
-
+                    <Card.Image style={styles.img} source={backdrop} />
                     <View style={styles.logoContainer}>
-                        <Avatar source={{ uri: "https://cdn.cafeata.com/photos/photo_0x6b909e04178484eb_0xefb3b8da0b6d2d7e_16252820050390627.jpg" }} title="" size="medium" rounded={true} />
+                        <Avatar avatarStyle={styles.logo} source={{ uri: logo }} title="" size="medium" rounded={true} />
                     </View>
                 </View>
 
                 <View style={styles.storenameContainer}>
-
                     <Card.Title style={styles.store_name}>
-                        Hello
+                        {name}
                     </Card.Title>
                 </View>
+            </View>
 
 
 
-            </Card>
+
 
         </TouchableOpacity>
     );
@@ -35,15 +36,27 @@ const StoreCard = () => {
 const styles = StyleSheet.create({
     container: {
         marginLeft: 15,
+        width: 160
+    },
+    store_card: {
+        padding: 0,
+        borderRadius: 20,
+        borderWidth: 3, 
+        borderColor: "white",
+        backgroundColor: '#fff'
+    },
+    logo: {
+        borderWidth: 3,
+        borderColor: "white",
+        borderRadius: "50%"
     },
     img: {
-        height: 70,
-        width: 100,
-        borderRadius: 10,
+        height:80,
+        borderTopLeftRadius: 15,
+        borderTopRightRadius: 15,
         borderColor: "white",
         borderWidth: 1,
-        zIndex: 0,
-        position: "absolute"
+        margin: 0
     },
     logoContainer: {
         width: "100%",
@@ -55,12 +68,12 @@ const styles = StyleSheet.create({
     store_name: {
         justifyContent: "center",
         alignSelf: "center",
-        fontSize: 17,
+        fontSize: 14,
         fontWeight: 600
     },
-    storenameContainer:{
+    storenameContainer: {
         width: "100%",
-        marginTop: 40
+        marginTop: 30
     }
 })
 

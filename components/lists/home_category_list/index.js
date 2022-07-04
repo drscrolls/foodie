@@ -24,11 +24,16 @@ const categories = [
 const HomeCategoryList = () => {
     return (
         <View>
-            <Text style={styles.cat_title}>Popular Categories</Text>
+            <View style={styles.textContainer}>
+                <Text style={styles.cat_title}>Popular Categories</Text>
+                <View style={styles.linkContainer}>
+                    <Text style={styles.link}>See More</Text>
+                </View>
+            </View>
 
             <FlatList
                 data={categories}
-                renderItem={(index, item) => <Category cat={item} />}
+                renderItem={(item) => <Category category={item} />}
                 keyExtractor={(item) => item.id}
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -40,12 +45,29 @@ const HomeCategoryList = () => {
 
 const styles = StyleSheet.create({
     
+    textContainer: {
+        width: "100%",
+        flexDirection: "row"
+    },
+    linkContainer: {
+        justifyContent: "center",
+    },
     cat_title: {
         fontSize: 14,
-        marginBottom: 5,
+        marginBottom: 10,
         marginTop: 15,
         marginHorizontal: 15,
-        fontWeight: "600"
+        fontWeight: "600",
+        flex: 1
+    },
+    link : {
+        color: "#f27e4f",
+        alignSelf: "flex-end",
+        textAlign: "right",
+        fontSize: 12,
+        marginHorizontal: 20,
+        fontWeight: 400,
+        justifyContent: "center",
     }
 })
 
