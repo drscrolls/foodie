@@ -14,7 +14,7 @@ const AllStoresSearch = ({navigation}) => {
         <View style={styles.container}>
             <View style={styles.searchContainer}>
                 <Feather style={styles.icon} name="search" size={24} color="black" />
-                <TextInput style={styles.input} placeholder="Search Restaurant" placeholderTextColor={"#999"}/>
+                <TextInput style={styles.input} placeholder="Search restaurant" placeholderTextColor={"#999"}/>
             </View>
         </View>
     );
