@@ -77,6 +77,7 @@ export default class Login extends React.Component {
     }
 
     render() {
+        const navigation = this.props.navigation;
         return (
             <ScrollView
                 style={styles.container}
