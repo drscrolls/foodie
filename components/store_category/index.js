@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         marginTop: 5,
         fontSize: 12,
-        fontWeight: "500",
+        fontWeight: "400",
         textAlign: "center",
         // color: "#333"
     }

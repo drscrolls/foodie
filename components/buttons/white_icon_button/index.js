@@ -9,7 +9,7 @@ const WhiteIconButton = ({navigation, onPress, buttonStyle, icon, iconColor, ico
     return (
         <TouchableOpacity style={styles.container} onPress={()=> onPress()}>
             <View style={[styles.btn, buttonStyle]}>
-                <Feather name={icon} size={iconSize} color="black" />
+                <Feather name={icon} size={iconSize} color={iconColor} />
               {/* <Badge
                 status="error"
                 value={1}
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         padding: 4,
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: '#fff'
+        backgroundColor: 'rgb(249, 249, 249)'
     }
 })
 
