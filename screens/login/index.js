@@ -47,7 +47,7 @@ const Login = ({ navigation }) => {
                             containerStyle={{
                                 width: "100%",
                             }}
-                            onPress={() => console.log('aye')}
+                            onPress={()=> navigation.navigate("Home")}
                         />
 
                 </View>

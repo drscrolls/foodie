@@ -4,7 +4,7 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
 
 const StoreCard = ({navigation, route, store}) => {
-    console.log("store", store);
+    // console.log("store", store);
     // console.log("navigation ic", navigation);
 
     const {backdrop, logo, name, backgroundColor, textColor} = store.item;

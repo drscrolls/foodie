@@ -34,7 +34,7 @@ const Welcome = ({ navigation }) => {
                         containerStyle={{
                             width: "45%",
                         }}
-                        onPress={() => console.log('aye')}
+                        onPress={()=> navigation.navigate("Login")}
                     />
 
                     <Button
@@ -51,7 +51,7 @@ const Welcome = ({ navigation }) => {
                         containerStyle={{
                             width: "45%",
                         }}
-                        onPress={() => console.log('aye')}
+                        onPress={()=> navigation.navigate("SignUp")}
                     />
 
 
