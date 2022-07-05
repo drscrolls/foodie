@@ -1,10 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions, Image, Text } from 'react-native';
 import { Button } from 'react-native-elements';
-import StoreCategoryList from '../../components/lists/store_category_list';
-import StoreHeader from '../../components/store_header';
 
-
+const welcomeImage = require('../../assets/welcome.png');
 const {height, width} = Dimensions.get('window');
 const containerHeight = (75/100)  * height;
 
@@ -14,7 +12,7 @@ const Welcome = ({ navigation }) => {
         <ScrollView
             style={styles.container}
             bounces={true}>
-            <Image style={styles.backdrop} source={{ uri: require("../../assets/welcome.png") }} />
+            <Image style={styles.backdrop} source={welcomeImage} />
             <View style={styles.content}>
                 <View style={styles.textContainer}>
                     <Text style={styles.title}>Hi, we're Amelia 👋</Text>

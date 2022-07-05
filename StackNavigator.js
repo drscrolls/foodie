@@ -12,13 +12,15 @@ import AllStoresSearch from './components/filters/all_stores_search';
 import Store from './screens/store';
 import WhiteIconButton from './components/buttons/white_icon_button';
 import Welcome from './screens/welcome';
+import Login from './screens/login';
+import SignUp from './screens/signup';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Home'
+    <Stack.Navigator initialRouteName='Login'
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
@@ -99,15 +101,15 @@ const StackNavigator = () => {
             backgroundColor: '#f7f7f7',
           },
           headerLeft: () => (
-            <WhiteIconButton 
-              onPress={()=> navigation.goBack()}
-              navigation={navigation} 
+            <WhiteIconButton
+              onPress={() => navigation.goBack()}
+              navigation={navigation}
               iconColor={"black"}
               iconSize={22}
               icon={"chevron-left"}
-              buttonStyle={{marginLeft: 10, width: 45, height: 45}}/>
+              buttonStyle={{ marginLeft: 10, width: 45, height: 45 }} />
           ),
-          headerStyle:{
+          headerStyle: {
             marginHorizontal: 20
           }
 
@@ -119,10 +121,21 @@ const StackNavigator = () => {
         name="Welcome"
         component={Welcome}
         options={({ navigation, route }) => ({
-          headerShown: false,
-          cardStyle: {
-            backgroundColor: '#f4feff',
-          }
+          headerShown: false
+        })} />
+
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={({ navigation, route }) => ({
+          headerShown: false
+        })} />
+
+      <Stack.Screen
+        name="SignUp"
+        component={SignUp}
+        options={({ navigation, route }) => ({
+          headerShown: false
         })} />
     </Stack.Navigator>
   );
