@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions, Image, Text, TouchableOpacity } from 'react-native';
 import { Button, Input } from 'react-native-elements';
+import * as SecureStore from 'expo-secure-store';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+
 const axios = require('axios').default;
 
 const welcomeImage = require('../../assets/welcome.png');
@@ -18,11 +20,26 @@ export default class Login extends React.Component {
         this.state = {
             email: "",
             password: "",
-            isSubmitting: false
+            isSubmitting: false,
+            navigation: props.navigation
         };
+
+        // console.log("this.state", this.state);
 
     }
 
+    // save = async (key, value) => {
+    //     await SecureStore.setItemAsync(key, value);
+    // }
+
+    // getValueFor = async (key) => {
+    //     let result = await SecureStore.getItemAsync(key);
+    //     if (result) {
+    //         alert("🔐 Here's your value 🔐 \n" + result);
+    //     } else {
+    //         alert('No values stored under that key.');
+    //     }
+    // }
 
     login = async (react) => {
 
@@ -32,24 +49,31 @@ export default class Login extends React.Component {
             alert("No email or password provided");
             return;
         }
+        const navigation = this.state.navigation;
 
-        try {
-            this.setState({ isSubmitting: true });
-            const response = await axios.post('http://localhost:3000/api/users/login', {
-                email,
-                password
-            })
-            .then(function (response) {
-                console.log("successful", response);
-                react.setState({ isSubmitting: false });
-            })
-            .catch(function (error) {
-                console.log("error", error);
-            });
-            console.log(response);
-        } catch (error) {
-            console.log("caught exception", error);
-        }
+        navigation.navigate("Home");
+        
+        // try {
+        //     this.setState({ isSubmitting: true });
+        //     const response = await axios.post('http://localhost:3000/api/users/login', {
+        //         email,
+        //         password
+        //     })
+        //         .then(function (response) {
+        //             console.log("successful", response);
+        //             react.setState({ isSubmitting: false });
+        //             const token = response.data.data.token;
+        //             console.log("token", token);
+        //             // react.save("token", token);
+        //             // react.getValueFor("token");
+        //         })
+        //         .catch(function (error) {
+        //             console.log("error", error);
+        //         });
+        //     console.log(response);
+        // } catch (error) {
+        //     console.warn("caught exception", error);
+        // }
     }
 
     render() {
