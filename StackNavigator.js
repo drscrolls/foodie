@@ -10,13 +10,14 @@ import AllStores from './screens/all_stores';
 import AllStoresFilterButton from './components/filters/all_stores_filter_button';
 import AllStoresSearch from './components/filters/all_stores_search';
 import Store from './screens/store';
+import WhiteIconButton from './components/buttons/white_icon_button';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Store'
+    <Stack.Navigator initialRouteName='Home'
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
@@ -87,19 +88,27 @@ const StackNavigator = () => {
         name="Store"
         component={Store}
         options={({ navigation, route }) => ({
-          title: 'Macdonalds',
+          title: '',
           headerTitleAlign: "center",
-          headerShown: false,
-          headerStyle: {
-            backgroundColor: '#fff',
+          headerTitleStyle: {
+            color: route.params.textColor
           },
+          headerTransparent: true,
           cardStyle: {
             backgroundColor: '#f7f7f7',
           },
-          // headerRight: () => (
-          //   <AllStoresFilterButton
-          //     navigation={navigation} />
-          // )
+          headerLeft: () => (
+            <WhiteIconButton 
+              onPress={()=> navigation.goBack()}
+              navigation={navigation} 
+              iconColor={"black"}
+              iconSize={22}
+              icon={"chevron-left"}
+              buttonStyle={{marginLeft: 10, width: 45, height: 45}}/>
+          ),
+          headerStyle:{
+            marginHorizontal: 20
+          }
 
         })} />
     </Stack.Navigator>

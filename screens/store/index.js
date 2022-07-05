@@ -3,7 +3,7 @@ import {View, StyleSheet, ScrollView, Button} from 'react-native';
 import StoreCategoryList from '../../components/lists/store_category_list';
 import StoreHeader from '../../components/store_header';
 
-const Store = ({navigation, route}) => {
+const Store = ({navigation}) => {
     
     return (
         <ScrollView 

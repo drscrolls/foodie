@@ -4,11 +4,12 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, Text, Avatar } from 'react-native-elements'
 
 const StoreCard = ({navigation, route, store}) => {
-    // console.log("store", store);
+    console.log("store", store);
+    // console.log("navigation ic", navigation);
 
-    const {backdrop, logo, name} = store.item;
+    const {backdrop, logo, name, backgroundColor, textColor} = store.item;
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={()=> navigation.navigate("Store", {backgroundColor: backgroundColor, textColor: textColor})}>
 
             <View style={styles.store_card}>
                 <View>
