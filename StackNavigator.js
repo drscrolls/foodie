@@ -11,6 +11,7 @@ import AllStoresFilterButton from './components/filters/all_stores_filter_button
 import AllStoresSearch from './components/filters/all_stores_search';
 import Store from './screens/store';
 import WhiteIconButton from './components/buttons/white_icon_button';
+import Welcome from './screens/welcome';
 
 
 const Stack = createNativeStackNavigator();
@@ -110,6 +111,18 @@ const StackNavigator = () => {
             marginHorizontal: 20
           }
 
+        })} />
+
+
+
+      <Stack.Screen
+        name="Welcome"
+        component={Welcome}
+        options={({ navigation, route }) => ({
+          headerShown: false,
+          cardStyle: {
+            backgroundColor: '#f4feff',
+          }
         })} />
     </Stack.Navigator>
   );

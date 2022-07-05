@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet, Text} from 'react-native';
+import {View, StyleSheet, TouchableOpacity, Text} from 'react-native';
 import * as Font from 'expo-font';
 import AppLoading from 'expo-app-loading';
   
@@ -7,10 +7,10 @@ const GreetingComponent = ({navigation, name}) => {
 
     const username = name ? name : "User";
     return (
-        <View style={styles.container}>
+        <TouchableOpacity onPress={() => navigation.navigate("Welcome")} style={styles.container}>
             <Text style={styles.greetingTitle}>Hello {username} 👋 </Text>
             <Text style={styles.greetingSubtitle}>We are delivering happiness</Text>
-        </View>
+        </TouchableOpacity>
     );
 }
 
