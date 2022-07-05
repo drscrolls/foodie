@@ -9,27 +9,28 @@ import Profile from './screens/profile';
 import AllStores from './screens/all_stores';
 import AllStoresFilterButton from './components/filters/all_stores_filter_button';
 import AllStoresSearch from './components/filters/all_stores_search';
+import Store from './screens/store';
 
 
 const Stack = createNativeStackNavigator();
 
 const StackNavigator = () => {
   return (
-    <Stack.Navigator initialRouteName='Home'
+    <Stack.Navigator initialRouteName='Store'
       screenOptions={{
         headerShadowVisible: false,
         headerStyle: {
           backgroundColor: '#f2f2f2',
         },
         cardStyle: {
-            backgroundColor: '#f2f2f2'
+          backgroundColor: '#f2f2f2'
         }
       }}>
       <Stack.Screen
         name="Home"
         component={Home}
         options={({ navigation, route }) => ({
-          title : "",
+          title: "",
           headerLeft: () => (
             <GreetingComponent
               navigation={navigation}
@@ -38,13 +39,13 @@ const StackNavigator = () => {
           ),
           headerRight: () => (
             <HeaderRightComponent
-            navigation={navigation} />
+              navigation={navigation} />
           )
         })}
       />
-     
-      <Stack.Screen 
-        name="Profile" 
+
+      <Stack.Screen
+        name="Profile"
         component={Profile}
         options={{
           title: 'Profile',
@@ -58,8 +59,8 @@ const StackNavigator = () => {
         }} />
 
 
-      <Stack.Screen 
-        name="AllStores" 
+      <Stack.Screen
+        name="AllStores"
         component={AllStores}
         options={({ navigation, route }) => ({
           // title: '',
@@ -72,14 +73,35 @@ const StackNavigator = () => {
           },
           headerRight: () => (
             <AllStoresFilterButton
-            navigation={navigation} />
+              navigation={navigation} />
           ),
           headerTitle: () => (
             <AllStoresSearch
-            navigation={navigation} />
+              navigation={navigation} />
           ),
-          
-        })}/>
+
+        })} />
+
+
+      <Stack.Screen
+        name="Store"
+        component={Store}
+        options={({ navigation, route }) => ({
+          title: 'Macdonalds',
+          headerTitleAlign: "center",
+          headerShown: false,
+          headerStyle: {
+            backgroundColor: '#fff',
+          },
+          cardStyle: {
+            backgroundColor: '#f7f7f7',
+          },
+          // headerRight: () => (
+          //   <AllStoresFilterButton
+          //     navigation={navigation} />
+          // )
+
+        })} />
     </Stack.Navigator>
   );
 }
