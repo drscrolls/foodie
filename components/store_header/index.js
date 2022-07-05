@@ -5,7 +5,7 @@ import { MaterialIcons } from '@expo/vector-icons';
 import WhiteIconButton from '../buttons/white_icon_button';
 
 const {height, width} = Dimensions.get('window');
-const containerWidth = (75/100)  * width;
+const containerWidth = (80/100)  * width;
 
 
 const StoreHeader = ({navigation}) => {
@@ -17,10 +17,10 @@ const StoreHeader = ({navigation}) => {
                 <Avatar avatarStyle={styles.logo} source={{ uri: "https://cdn.cafeata.com/photos/photo_0x6b909e04178484eb_0xefb3b8da0b6d2d7e_16252820050390627.jpg" }} title="" size={70} rounded={true} />
                 <View style={styles.storeTitleContainer}>
                     <Text style={styles.storeTitle}>Macdonalds</Text>
-                    <View style={styles.deliveryTextContainer}>
-                        <MaterialIcons name="delivery-dining" size={24} color="black" />
-                        <Text style={styles.deliveryText}>20 min</Text>
-                    </View>
+                </View>
+                <View style={styles.deliveryTextContainer}>
+                    <MaterialIcons name="delivery-dining" size={24} color="black" />
+                    <Text style={styles.deliveryText}>20 min</Text>
                 </View>
             </View>
         </View>
@@ -45,15 +45,15 @@ const styles = StyleSheet.create({
     storeTitle: {
         fontWeight: "bold",
         width: "100%",
-        fontSize: 18
+        fontSize: 18,
+        marginLeft: 10
     },
     storeTitleContainer: {
-        width: containerWidth,
         // borderColor: "white",
         // backgroundColor: '#fff',
         bottom: -40,
         flexDirection: "row",
-        paddingHorizontal: 10
+        // paddingHorizontal: 10
     },
     logo: {
         borderWidth: 3,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
         alignItems: "flex-start",
         position: "absolute",
         bottom: -35,
-        left: 20,
+        paddingHorizontal: 20,
         alignSelf: "flex-start",
         flexDirection: "row",
     },
@@ -91,6 +91,9 @@ const styles = StyleSheet.create({
     deliveryTextContainer: {
         flexDirection: "row",
         justifyContent: "flex-end",
+        position: "absolute",
+        top: 40,
+        right: 10
     },
     deliveryText: {
         marginLeft: 5,

@@ -19,7 +19,7 @@ const Store = ({navigation}) => {
 
 const styles = StyleSheet.create({
     headerContainer: {
-        marginBottom: 60
+        marginBottom: 50
     }
 })
 
