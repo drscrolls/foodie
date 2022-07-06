@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView, Dimensions, Image, Text, TouchableOpacity } from 'react-native';
 import { Button, Input } from 'react-native-elements';
-import * as SecureStore from 'expo-secure-store';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import * as SecureStore from 'expo-secure-store';
 
 const axios = require('axios').default;
 
@@ -49,31 +49,37 @@ export default class Login extends React.Component {
             alert("No email or password provided");
             return;
         }
-        const navigation = this.state.navigation;
 
-        navigation.navigate("Home");
-        
-        // try {
-        //     this.setState({ isSubmitting: true });
-        //     const response = await axios.post('http://localhost:3000/api/users/login', {
-        //         email,
-        //         password
-        //     })
-        //         .then(function (response) {
-        //             console.log("successful", response);
-        //             react.setState({ isSubmitting: false });
-        //             const token = response.data.data.token;
-        //             console.log("token", token);
-        //             // react.save("token", token);
-        //             // react.getValueFor("token");
-        //         })
-        //         .catch(function (error) {
-        //             console.log("error", error);
-        //         });
-        //     console.log(response);
-        // } catch (error) {
-        //     console.warn("caught exception", error);
-        // }
+
+
+
+        try {
+            this.setState({ isSubmitting: true });
+            const response = await axios.post('https://dry-mountain-98323.herokuapp.com/api/users/login', {
+                email,
+                password
+            })
+                .then(async function (response) {
+                    // console.log("successful", response);
+                    react.setState({ isSubmitting: false });
+                    const token = response.data.data.token;
+                    console.log("api_token:", token);
+                    
+                    await SecureStore.setItemAsync('token', token);
+                    const stored_token = await SecureStore.getItemAsync('token');
+                    console.log("stored_token:", stored_token);
+                    console.warn("stored_token:", stored_token);
+
+                    const navigation = react.state.navigation;
+                    navigation.navigate("Home");
+                })
+                .catch(function (error) {
+                    console.log("error", error);
+                });
+            // console.log(response);
+        } catch (error) {
+            console.warn("caught exception", error);
+        }
     }
 
     render() {
