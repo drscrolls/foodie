@@ -4,23 +4,23 @@ import { BottomSheet, Card, Text } from 'react-native-elements'
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
 
-const LocationPicker = () => {
+const LocationPicker = ({onPress}) => {
     return (
         <Pressable>
             <View style={styles.locationCardContainer}>
                 <View style={styles.innerContainer}>
-                    <View style={styles.iconBg}>
+                    <TouchableOpacity onPress={()=> onPress()} style={styles.iconBg}>
                         <Ionicons name="ios-location-sharp" size={24} color="#5a61cb" />
-                    </View>
+                    </TouchableOpacity>
 
-                    <TouchableOpacity style={styles.locationContainer}>
+                    <TouchableOpacity onPress={()=> onPress()} style={styles.locationContainer}>
                         <Text style={styles.locationTitle}>My location</Text>
                         <Text style={styles.locationTxt}>243 Pond Rd, Shaboro North</Text>
                     </TouchableOpacity>
 
-                    <View style={styles.chevronContainer}>
+                    <TouchableOpacity onPress={()=> onPress()} style={styles.chevronContainer}>
                         <Feather name="chevron-right" size={20} color="black" />
-                    </View>
+                    </TouchableOpacity>
                 </View>
                 
             </View>
